@@ -1,0 +1,13 @@
+---
+- name: Deploy CINE.AI application
+  hosts: all
+  tasks:
+    - name: Pull Docker images
+      command: docker-compose pull
+      args:
+        chdir: "{{ playbook_dir }}/.."
+
+    - name: Bring up Docker containers
+      command: docker-compose up -d
+      args:
+        chdir: "{{ playbook_dir }}/.."

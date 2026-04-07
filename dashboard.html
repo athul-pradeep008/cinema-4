@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINEMA 4 - Project Dashboard</title>
+    <style>
+        :root {
+            --primary: #4f44f8;
+            --secondary: #00d2ff;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --success: #10b981;
+        }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .header h1 {
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+        .command-box {
+            background: #000;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Fira Code', monospace;
+            color: var(--secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .link-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        .link-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+        }
+        .link-card h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--secondary);
+        }
+        .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: var(--success);
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>CINE·AI</h1>
+            <p>Full-Stack Orchestration Ready</p>
+        </header>
+
+        <div class="card">
+            <h2>🚀 Correct Command</h2>
+            <p>Run this in <code>c:\Users\ATHULPRADEEP\Downloads\CINEMA 4</code> to start all services:</p>
+            <div class="command-box">
+                <code>npm run dev</code>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔗 Project Links</h2>
+            <div class="links-grid">
+                <a href="http://localhost:5173" target="_blank" rel="noopener" class="link-card">
+                    <h3>Frontend</h3>
+                    <p>Vite React App</p>
+                    <div><span class="status-dot"></span> Port 5173</div>
+                </a>
+                <a href="http://localhost:5000/api/health" target="_blank" rel="noopener" class="link-card">
+                    <h3>Flask API</h3>
+                    <p>Analysis Engine</p>
+                    <div><span class="status-dot"></span> Port 5000</div>
+                </a>
+                <a href="http://localhost:5001/api/health" target="_blank" rel="noopener" class="link-card">
+                    <h3>Express API</h3>
+                    <p>Events Dashboard</p>
+                    <div><span class="status-dot"></span> Port 5001</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

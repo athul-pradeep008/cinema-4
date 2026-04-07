@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    image: athulpradeep123/cinema-backend:latest
+    build: 
+      context: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    image: athulpradeep123/cinema-frontend:latest
+    build:
+      context: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: cinema_user
+      POSTGRES_PASSWORD: cinema_password
+      POSTGRES_DB: cinema_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
